@@ -42,9 +42,7 @@
 	};
 </script>
 
-<nav
-	class="h-full bg-primaryDark  border-r-[1px]  overflow-auto p-4 {className} flex flex-col gap-4"
->
+<nav class="h-full bg-Tertiary3  border-r-[1px]  overflow-auto p-4 {className} flex flex-col gap-4">
 	{#each mainRoutes as { name, href, icon, iconFilled }}
 		<a
 			{href}
@@ -52,7 +50,7 @@
 				href,
 				$page.url.pathname,
 			)
-				? 'bg-white text-primaryDark'
+				? 'bg-white text-Tertiary3'
 				: 'text-white'}"
 			title={name}
 		>

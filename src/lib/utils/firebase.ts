@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { doc, getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import { docStore } from 'sveltefire';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyByXYY494vHtngPVMuxFV1odNMO-QoERAA',
@@ -15,3 +16,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
 export const auth = getAuth(app);
+
+// docs
+
+//export const profilesDocs = docStore(firestore, 'profiles');
+//export const groupsDocs = docStore(firestore, 'group');
+//export const directMessagesDocs = docStore(firestore, 'direct-messages');
+//export const groupMessagesDocs = docStore(firestore, 'group-messages');
+//
+//export const postsDocs = docStore(firestore, 'posts');

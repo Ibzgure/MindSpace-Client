@@ -1,5 +1,6 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import { colorScheme } from './theme';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -15,11 +16,7 @@ const config = {
 		},
 		extend: {
 			colors: {
-				primaryMain: '#FF77FF',
-				primaryDark: '#50434F',
-				primaryLight: '#B6A6B5',
-				secondaryMain: '#FF8827',
-				secondaryDark: '#CC5300',
+				...colorScheme,
 
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -27,7 +24,7 @@ const config = {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
+					DEFAULT: colorScheme.Tertiary1,
 					foreground: 'hsl(var(--primary-foreground))',
 				},
 				secondary: {
