@@ -2,14 +2,18 @@
 	import '../app.postcss';
 	import 'iconify-icon';
 
-	import { user } from '$lib/utils/firebase';
+	import { firestore, auth } from '$lib/utils/firebase';
 	import Auth from '$lib/components/Auth.svelte';
+	import { FirebaseApp, SignedIn, SignedOut } from 'sveltefire';
 </script>
 
-<main class="h-screen">
-	{#if $user}
-		<slot />
-	{:else}
-		<Auth />
-	{/if}
-</main>
+<FirebaseApp {firestore} {auth}>
+	<main class="h-screen">
+		<SignedIn>
+			<slot />
+		</SignedIn>
+		<SignedOut>
+			<Auth />
+		</SignedOut>
+	</main>
+</FirebaseApp>
