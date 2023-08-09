@@ -27,6 +27,12 @@
 			iconFilled: 'solar:notebook-bold-duotone',
 		},
 		{
+			name: 'Articles',
+			href: '/articles',
+			icon: 'solar:bookmark-square-line-duotone',
+			iconFilled: 'solar:bookmark-square-bold-duotone',
+		},
+		{
 			name: 'Setting',
 			href: '/settings',
 			icon: 'solar:settings-line-duotone',
@@ -42,7 +48,7 @@
 	};
 </script>
 
-<nav class="h-full bg-Tertiary3  border-r-[1px]  overflow-auto p-4 {className} flex flex-col gap-4">
+<nav class="h-full bg-Tertiary3  overflow-auto p-4 {className} flex flex-col gap-4">
 	{#each mainRoutes as { name, href, icon, iconFilled }}
 		<a
 			{href}
