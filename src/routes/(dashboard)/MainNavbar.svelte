@@ -44,7 +44,8 @@
 	export { className as class };
 
 	const isSelected = (href: string, currentPath: string) => {
-		return href === currentPath;
+		if (href === '/') return href === currentPath;
+		return currentPath.includes(href);
 	};
 </script>
 

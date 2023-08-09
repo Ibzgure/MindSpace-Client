@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { doc, getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import { collectionStore, docStore } from 'sveltefire';
+import { collectionStore, docStore, userStore } from 'sveltefire';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyByXYY494vHtngPVMuxFV1odNMO-QoERAA',
@@ -16,6 +16,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
 export const auth = getAuth(app);
+
+// user session
+
+export const user = userStore(auth);
 
 // docs
 
